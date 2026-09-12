@@ -12,4 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508d81ac221ce2e44b9f2efe1561d567, type: 3}
   m_Name: testDialogue
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - name: Persona desconocida
+    text: HOLA!
+    voice: {fileID: 0}
+    characterImage: {fileID: 21300000, guid: e3386167a98ca5a4c8995ddaad5e1f42, type: 3}
+    typingSpeed: 0.035
+  - name: Persona desconocida
+    text: Lorem ipsum dolor sit amet etc etc etc
+    voice: {fileID: 0}
+    characterImage: {fileID: 21300000, guid: e3386167a98ca5a4c8995ddaad5e1f42, type: 3}
+    typingSpeed: 0.035
+  - name: Persona desconocida
+    text: ADIOS!
+    voice: {fileID: 0}
+    characterImage: {fileID: 21300000, guid: e3386167a98ca5a4c8995ddaad5e1f42, type: 3}
+    typingSpeed: 0.035
