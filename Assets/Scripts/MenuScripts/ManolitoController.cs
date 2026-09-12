@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ManolitoController : MonoBehaviour
 {
-    Transform tr;
+    RectTransform tr;
 
     void Start()
     {
-        tr = GetComponent<Transform>();
+        tr = GetComponent<RectTransform>();
     }
-    
+
     void Update()
     {
-        tr.position = new Vector3(transform.position.x - 1f * Time.deltaTime, transform.position.y, transform.position.z);
+        tr.anchoredPosition = new Vector3(tr.anchoredPosition.x - 50f * Time.deltaTime, tr.anchoredPosition.y);
         tr.Rotate(0, 0, -30 * Time.deltaTime);
     }
 }
