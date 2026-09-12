@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MenuBackgroundScroll : MonoBehaviour
 {
+    public float velocity;
     RectTransform tr;
 
     void Start()
@@ -13,7 +14,7 @@ public class MenuBackgroundScroll : MonoBehaviour
 
     void Update()
     {
-        tr.anchoredPosition = new Vector3(tr.anchoredPosition.x + 40f * Time.deltaTime, tr.anchoredPosition.y);
+        tr.anchoredPosition = new Vector3(tr.anchoredPosition.x + velocity * Time.deltaTime, tr.anchoredPosition.y);
 
         if(tr.anchoredPosition.x > 1080)
         {
