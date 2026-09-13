@@ -26,7 +26,11 @@ public class ButtonController : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
-        Debug.Log("QuitButtonPressed");
+
+        //el #if es como decir "este codigo solo existe si x"
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
 }
