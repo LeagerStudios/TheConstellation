@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class PlayerM1 : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerM1 : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 0);
         keyPressed = false;
         transform.position = startPos;
+        points = 0;
     }
 
     void Update()
@@ -47,6 +49,20 @@ public class PlayerM1 : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, -maxAngle);
             }
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Asteroid"))
+        {
+            GameOver();
+        }
+    }
+
+    void GameOver()
+    {
+        Debug.Log("Perdiste lol");
+        Destroy(gameObject);
     }
 
     void FixedUpdate()
