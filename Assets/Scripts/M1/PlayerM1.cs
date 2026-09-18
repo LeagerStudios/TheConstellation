@@ -13,7 +13,7 @@ public class PlayerM1 : MonoBehaviour
     public KeyCode keyCode;
     public float maxAngle;
     public float SpeedOfMaxAngle;
-
+    public int points = 0;
 
     void Start()
     {
