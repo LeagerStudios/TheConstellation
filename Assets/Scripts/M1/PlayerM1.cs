@@ -14,6 +14,7 @@ public class PlayerM1 : MonoBehaviour
     public float maxAngle;
     public float SpeedOfMaxAngle;
     public int points = 0;
+    public float elapsedTime = 0f;
 
     void Start()
     {
@@ -49,6 +50,10 @@ public class PlayerM1 : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, -maxAngle);
             }
         }
+
+        elapsedTime += Time.deltaTime;
+        points = Mathf.FloorToInt(elapsedTime * 1000);
+        Debug.Log(points);
     }
 
     void OnTriggerEnter2D(Collider2D other)
