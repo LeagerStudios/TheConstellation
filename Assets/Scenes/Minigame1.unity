@@ -153,7 +153,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 0.5}
+  m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &88699096
 Transform:
@@ -163,7 +163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88699094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: -5, z: 0}
+  m_LocalPosition: {x: -5, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 147885278}
   - component: {fileID: 147885277}
   m_Layer: 0
-  m_Name: AsteroidGenerator
+  m_Name: Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,12 +198,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2db1efe0e554354285d0af09c47be10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canGenerateAsteroid: 0
   AsteroidPrefab: {fileID: 4187283495473534831, guid: 5e9a7b557c343a74daf0731a56c62c32,
     type: 3}
-  Xpos: 9
+  MoneyPrefab: {fileID: 7968220628699587165, guid: 1085a1dae25050949a6cb5e09ad29357,
+    type: 3}
+  asteroidXpos: 9
   maxYpos: 4.5
   minYpos: -4.5
   waitTime: 0.6
+  moneySpawnPosition: {x: 9, y: 0}
 --- !u!4 &147885278
 Transform:
   m_ObjectHideFlags: 0
@@ -269,7 +273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650477428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 5, z: 0}
+  m_LocalPosition: {x: -5, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5397,3 +5401,4 @@ MonoBehaviour:
   SpeedOfMaxAngle: 3
   points: 0
   elapsedTime: 0
+  Generator: {fileID: 147885277}

@@ -5,6 +5,8 @@ using UnityEngine.Analytics;
 
 public class PlayerM1 : MonoBehaviour
 {
+    private bool k; //ni se os ocurra quitarlo este bool es esencial para tda lo lógica del juego ok?
+    private int level;
     public Rigidbody2D rb;
     public float force;
     public float maxSpeed;
@@ -15,13 +17,16 @@ public class PlayerM1 : MonoBehaviour
     public float SpeedOfMaxAngle;
     public int points = 0;
     public float elapsedTime = 0f;
+    public Generator Generator;
 
     void Start()
     {
+        k = true;
         transform.rotation = Quaternion.Euler(0, 0, 0);
         keyPressed = false;
         transform.position = startPos;
         points = 0;
+        level = 0;
     }
 
     void Update()
@@ -51,9 +56,22 @@ public class PlayerM1 : MonoBehaviour
             }
         }
 
-        elapsedTime += Time.deltaTime;
-        points = Mathf.FloorToInt(elapsedTime * 1000);
+        if(k)
+        {
+            elapsedTime += Time.deltaTime;
+            points = Mathf.FloorToInt(elapsedTime * 1000);
+        }
+
         Debug.Log(points);
+
+        if(points>=10000)
+        {
+            if(k)
+            {
+                k = false;
+                Generator.GenerateMoney();
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -61,6 +79,10 @@ public class PlayerM1 : MonoBehaviour
         if(other.CompareTag("Asteroid"))
         {
             GameOver();
+        }
+        if(other.CompareTag("Coin"))
+        {
+            Debug.Log("Ganaste lol");
         }
     }
 
