@@ -8,7 +8,7 @@ public class Money : MonoBehaviour
 
     void Update()
     {
-        if(transform.position.x >= -4.5)
+        if(transform.position.x >= -4)
         {
             transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
         }

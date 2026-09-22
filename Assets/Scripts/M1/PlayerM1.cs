@@ -5,8 +5,8 @@ using UnityEngine.Analytics;
 
 public class PlayerM1 : MonoBehaviour
 {
-    private bool k; //ni se os ocurra quitarlo este bool es esencial para tda lo lógica del juego ok?
-    private int level;
+    private bool k; //ni se os ocurra quitarlo este bool es esencial para tda lo lógica del juego ok? Gofre: Podrías haberle puesto un nombre descriptivo XD
+    // private int level;
     public Rigidbody2D rb;
     public float force;
     public float maxSpeed;
@@ -26,7 +26,7 @@ public class PlayerM1 : MonoBehaviour
         keyPressed = false;
         transform.position = startPos;
         points = 0;
-        level = 0;
+        // level = 0;
     }
 
     void Update()
@@ -62,7 +62,11 @@ public class PlayerM1 : MonoBehaviour
             points = Mathf.FloorToInt(elapsedTime * 1000);
         }
 
-        Debug.Log(points);
+        if(points < 10000)
+        {
+            Debug.Log(points);
+        }
+        
 
         if(points>=10000)
         {
@@ -83,6 +87,7 @@ public class PlayerM1 : MonoBehaviour
         if(other.CompareTag("Coin"))
         {
             Debug.Log("Ganaste lol");
+            Time.timeScale = 0.0f;
         }
     }
 
