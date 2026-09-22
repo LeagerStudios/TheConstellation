@@ -5396,9 +5396,10 @@ MonoBehaviour:
   force: 40
   maxSpeed: 5
   startPos: {x: -5, y: 0}
-  keyCode: 32
+  keyCode: 8
   maxAngle: 10
   SpeedOfMaxAngle: 3
-  points: 0
   elapsedTime: 0
+  elapsedTimeInt: 0
+  timeLeft: 0
   Generator: {fileID: 147885277}
