@@ -5,8 +5,8 @@ using UnityEngine.Analytics;
 
 public class PlayerM1 : MonoBehaviour
 {
+    private int obtainedCoins; //en principio las monedas se consiguen siempre en orden en el M1, asiq no hace falta crear un bool para cada moneda por cada moneda independiente
     private bool k;
-    // private int level;
     public Rigidbody2D rb;
     public float force;
     public float maxSpeed;
@@ -20,7 +20,7 @@ public class PlayerM1 : MonoBehaviour
     public int timeLeft;
     public Generator Generator;
     public int[] levelDurations = { 20, 10, 30 }; //obviamente van a durar más, esto es de prueba
-    private int Level;
+    public int Level;
 
     void Start()
     {
@@ -29,6 +29,7 @@ public class PlayerM1 : MonoBehaviour
         keyPressed = false;
         transform.position = startPos;
         Level = 1;
+        obtainedCoins = 0;
     }
 
     void Update()
@@ -63,11 +64,11 @@ public class PlayerM1 : MonoBehaviour
             elapsedTime += Time.deltaTime;
             elapsedTimeInt = Mathf.FloorToInt(elapsedTime);
 
-            timeLeft = 96 - elapsedTimeInt;
+            timeLeft = levelDurations[Level-1] - elapsedTimeInt;
 
         }
 
-        if(elapsedTimeInt>=96)
+        if(elapsedTimeInt >= levelDurations[Level-1])
         {
             if(k)
             {
@@ -75,8 +76,6 @@ public class PlayerM1 : MonoBehaviour
                 Generator.GenerateMoney();
             }
         }
-
-        Debug.Log(timeLeft);
     }
 
     void FixedUpdate()
@@ -106,14 +105,25 @@ public class PlayerM1 : MonoBehaviour
         if(other.CompareTag("Coin"))
         {
             EndLevel();
+
         }
     }
 
     void EndLevel()
     {
-        Debug.Log("Minigame 1 - Level1. Completed");
-        Time.timeScale = 0.0f;
-
+        Debug.Log("Minigame 1 - Level" + Level + " completed");
+        if(Level < 3)
+        {
+            StartCoroutine(StartNewLevel());
+            obtainedCoins++;
+            Debug.Log(obtainedCoins);
+        }
+        else
+        {
+            Debug.Log("Minigame 1 completed");
+            obtainedCoins = 3;
+            Win();
+        }
     }
 
     void GameOver()
@@ -123,5 +133,19 @@ public class PlayerM1 : MonoBehaviour
         Destroy(gameObject);
     }
 
-    
+    void Win()
+    {
+        //idk metanle algo si qren
+    }
+
+    public IEnumerator StartNewLevel()
+    {
+        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f);
+        Level++;
+        elapsedTime = 0f;
+        elapsedTimeInt = 0;
+        k = true;
+        Generator.canGenerateAsteroid = true;
+    }
 }

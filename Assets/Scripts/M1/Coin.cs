@@ -13,4 +13,18 @@ public class Coin : MonoBehaviour
             transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(Player());
+        }
+    }
+
+    public IEnumerator Player()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
+    }
 }
