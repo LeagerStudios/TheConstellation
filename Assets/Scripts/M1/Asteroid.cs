@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-    public float speed;
+    public float[] speeds = { 10f, 15f, 20f };
+    private int Level;
 
     void Update()
     {
@@ -14,5 +15,10 @@ public class Asteroid : MonoBehaviour
         }
 
         transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
+    }
+
+    void NextLevel()
+    {
+        Level++;
     }
 }

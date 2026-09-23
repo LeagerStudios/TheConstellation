@@ -19,6 +19,8 @@ public class PlayerM1 : MonoBehaviour
     public int elapsedTimeInt = 0;
     public int timeLeft;
     public Generator Generator;
+    public int[] levelDurations = { 20, 10, 30 }; //obviamente van a durar más, esto es de prueba
+    private int Level;
 
     void Start()
     {
@@ -26,7 +28,7 @@ public class PlayerM1 : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 0);
         keyPressed = false;
         transform.position = startPos;
-        // level = 0;
+        Level = 1;
     }
 
     void Update()
@@ -61,7 +63,7 @@ public class PlayerM1 : MonoBehaviour
             elapsedTime += Time.deltaTime;
             elapsedTimeInt = Mathf.FloorToInt(elapsedTime);
 
-            timeLeft = 136 - elapsedTimeInt;
+            timeLeft = 96 - elapsedTimeInt;
 
         }
 
@@ -73,6 +75,8 @@ public class PlayerM1 : MonoBehaviour
                 Generator.GenerateMoney();
             }
         }
+
+        Debug.Log(timeLeft);
     }
 
     void FixedUpdate()
@@ -101,16 +105,14 @@ public class PlayerM1 : MonoBehaviour
         }
         if(other.CompareTag("Coin"))
         {
-            Win();
+            EndLevel();
         }
     }
 
-    void Win()
+    void EndLevel()
     {
-        Debug.Log("Minigame 1 completed.");
+        Debug.Log("Minigame 1 - Level1. Completed");
         Time.timeScale = 0.0f;
-
-        //Usad este void por si quereis hacer algo chulo al final de un minijuego
 
     }
 
