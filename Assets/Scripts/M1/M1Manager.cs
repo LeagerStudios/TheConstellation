@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class M1Manager : MonoBehaviour
 {
+    public bool alive;
     private int obtainedCoins; //en principio las monedas se consiguen siempre en orden en el M1, asiq no hace falta crear un bool para cada moneda por cada moneda independiente
     private bool k;
     public float elapsedTime = 0f;
@@ -21,6 +22,7 @@ public class M1Manager : MonoBehaviour
 
     void Start()
     {
+        alive = true;
         InvokeRepeating(nameof(GenerateAsteroid), 0f, waitTime);
         canGenerateAsteroid = true;
         Level = 1;
@@ -40,7 +42,7 @@ public class M1Manager : MonoBehaviour
 
         if (elapsedTimeInt >= levelDurations[Level - 1])
         {
-            if (k)
+            if (k && alive)
             {
                 k = false;
                 GenerateMoney();
@@ -65,7 +67,6 @@ public class M1Manager : MonoBehaviour
 
     public void EndLevel()
     {
-        Debug.Log("Minigame 1 - Level" + Level + " completed");
         if(Level < 3)
         {
             StartCoroutine(StartNewLevel());
@@ -74,7 +75,6 @@ public class M1Manager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Minigame 1 completed");
             obtainedCoins = 3;
             Win();
         }
@@ -82,8 +82,7 @@ public class M1Manager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("Asteroid or the colliders were hit.");
-        Debug.Log("There were " + timeLeft + " seconds to finish the minigames");
+        alive = false;
     }
 
     public void Win()
