@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 147885278}
   - component: {fileID: 147885277}
   m_Layer: 0
-  m_Name: Generator
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,6 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2db1efe0e554354285d0af09c47be10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elapsedTime: 0
+  elapsedTimeInt: 0
+  timeLeft: 0
+  levelDurations: 140000000a0000001e000000
+  Level: 1
   canGenerateAsteroid: 1
   AsteroidPrefab: {fileID: 4187283495473534831, guid: 5e9a7b557c343a74daf0731a56c62c32,
     type: 3}
@@ -5392,6 +5397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e024fd1935f2ba4408fd5372a1fc5e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 147885277}
   rb: {fileID: 2105121159}
   force: 40
   maxSpeed: 5
@@ -5399,9 +5405,3 @@ MonoBehaviour:
   keyCode: 8
   maxAngle: 10
   SpeedOfMaxAngle: 3
-  elapsedTime: 0
-  elapsedTimeInt: 0
-  timeLeft: 0
-  Generator: {fileID: 147885277}
-  levelDurations: 050000000a0000001e000000
-  Level: 1

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-    public PlayerM1 playerScript;
+    public M1Manager manager;
 
     public float[] speeds = { 10f, 15f, 20f };
 
     void Awake()
     {
-        playerScript = FindObjectOfType<PlayerM1>();
+        manager = FindObjectOfType<M1Manager>();
     }
 
     void Update()
@@ -20,6 +20,6 @@ public class Asteroid : MonoBehaviour
             Destroy(gameObject);
         }
 
-        transform.position = new Vector2(transform.position.x - speeds[playerScript.Level - 1] * Time.deltaTime, transform.position.y);
+        transform.position = new Vector2(transform.position.x - speeds[manager.Level - 1] * Time.deltaTime, transform.position.y);
     }
 }
