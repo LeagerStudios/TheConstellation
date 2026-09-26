@@ -13,7 +13,11 @@ public class PlayerM2 : MonoBehaviour
     
     //Some variables used for movements and deceleration
     [SerializeField] float deceleration;
-    float targetSpeed;
+    [SerializeField] LayerMask groundMask;
+    RaycastHit2D groundRaycast;
+    bool canJump;
+    bool wantToJump;
+    public float targetSpeed;
     float newVelocity;
 
     //Player attributes
@@ -28,27 +32,24 @@ public class PlayerM2 : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         playerHealth = 100;
-        playerSpeed = 7.5f;
-        playerJumpForce = 500;
-        deceleration = 12.5f;
+        playerSpeed = 6f;
+        playerJumpForce = 350;
+        deceleration = 13.5f;
 
     }
     
     void Update()
     {
-        //Ta solito XDXDXD
-    }
 
-    private void FixedUpdate()
-    {
+        groundRaycast = Physics2D.Raycast(transform.position, Vector2.down, 1.05f, groundMask);
+
+        canJump = groundRaycast.collider != null;
 
         targetSpeed = 0f;
 
-        if (GInput.GetKeyDown(KeyCode.W))
+        if (GInput.GetKeyDown(KeyCode.W) && canJump)
         {
-
-            rb.AddForce(new Vector2(0, playerJumpForce));
-            
+            wantToJump = true;
         }
 
         if (GInput.GetKey(KeyCode.A))
@@ -63,6 +64,20 @@ public class PlayerM2 : MonoBehaviour
 
             targetSpeed = playerSpeed;
 
+        }
+
+    }
+
+    void FixedUpdate()
+    {
+
+        if (wantToJump)
+        {
+
+            rb.AddForce(new Vector2(0, playerJumpForce));
+
+            wantToJump = false;
+            
         }
 
         //Generates the velocity and if there was a movement before, it cancels it so that the new movement can be done quicker.

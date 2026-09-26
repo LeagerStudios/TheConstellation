@@ -16,11 +16,6 @@ public class M2_Manager : MonoBehaviour
 
     void Update()
     {
-        
-        while(playerScript.playerHealth > 0)
-        {
-            //minigameLogic
-        }
 
         if(playerScript.playerHealth == 0)
         {

@@ -5931,6 +5931,6 @@ MonoBehaviour:
   force: 40
   maxSpeed: 5
   startPos: {x: -5, y: 0}
-  keyCode: 8
+  keyCode: 32
   maxAngle: 10
   SpeedOfMaxAngle: 3
