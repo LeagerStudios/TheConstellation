@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7236402138706671086}
   - component: {fileID: 7236402138706671087}
+  - component: {fileID: 2546012790179745050}
   - component: {fileID: 7236402138706671084}
-  - component: {fileID: 7236402138706671085}
-  m_Layer: 0
+  - component: {fileID: 114648847846470234}
+  m_Layer: 2
   m_Name: M2_Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +82,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2546012790179745050
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7236402138706671082}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &7236402138706671084
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -107,7 +129,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7236402138706671085
+--- !u!114 &114648847846470234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,3 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578509d9938faae468feaedffd46af76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 2546012790179745050}
+  sr: {fileID: 7236402138706671087}
+  enemySpeed: 0
