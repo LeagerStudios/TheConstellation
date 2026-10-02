@@ -1,10 +1,12 @@
 fileFormatVersion: 2
-guid: e932542fae3b68748a0b3af23003a867
+guid: ae629ef4b1bfa724aac81be384ebbd8f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: New Piskel(89)_0
-    21300002: New Piskel(89)_1
-    21300004: New Piskel(89)_2
+    21300000: M2_Colliders_0
+    21300002: M2_Colliders_1
+    21300004: M2_Colliders_2
+    21300006: M2_Colliders_3
+    21300008: M2_Colliders_4
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -76,7 +78,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel(89)_0
+      name: M2_Colliders_0
       rect:
         serializedVersion: 2
         x: 0
@@ -90,13 +92,33 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c52f2f72c786c442b8542b6ef9f356f
+      spriteID: 2789f4135628be445aacf2bb740273ed
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel(89)_1
+      name: M2_Colliders_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb85916669a27043b35f68a18fa4c0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M2_Colliders_2
       rect:
         serializedVersion: 2
         x: 0
@@ -110,13 +132,33 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4921c96de4bf434ea2d321276dee22d
+      spriteID: 639b0a05538ae6d4d8ca382cad3cb6e6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel(89)_2
+      name: M2_Colliders_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6117fc06c093c4a49aa589b610037d14
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M2_Colliders_4
       rect:
         serializedVersion: 2
         x: 0
@@ -130,7 +172,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75f2d352cfe2e2642b0ba63da6cabf1b
+      spriteID: 38f3a29c65c24e54fa2e6a0e60e1e12b
       vertices: []
       indices: 
       edges: []
@@ -138,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1503470c1beb3984cb25366d0b22fe0e
+    spriteID: aef1d0a01aeb3f742b1aaf14c1694367
     vertices: []
     indices: 
     edges: []
