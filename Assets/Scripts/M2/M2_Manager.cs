@@ -23,10 +23,7 @@ public class M2_Manager : MonoBehaviour
 
         changeGravityTimer += Time.deltaTime;
 
-        if(playerScript.playerHealth == 0)
-        {
-            Debug.Log("Te has hecho la murición pro max");
-        }
+        
 
         if (Input.GetKeyDown(KeyCode.C) && player.GetComponent<Rigidbody2D>().gravityScale == 1 && changeGravityTimer >= 5 )
         {
@@ -43,6 +40,12 @@ public class M2_Manager : MonoBehaviour
 
             changeGravityTimer = 0f;
 
+        }
+
+        if (playerScript.playerHealth == 0)
+        {
+            gameObject.SetActive(false);
+            Debug.Log("Te has hecho la murición pro max");
         }
 
 
