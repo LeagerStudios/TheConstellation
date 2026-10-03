@@ -8,9 +8,11 @@ using System;
 
 public class MenuController : MonoBehaviour
 {
+    public Toggle shaderToggle;
+
     public void Start()//ejemplito del sistema de guardado, no tiene nada que ver con el menu xdxdxd
     {
-
+        shaderToggle.isOn = OptionsManager.ShaderOn;
     }
 
     public void PlayButton()
