@@ -40,13 +40,6 @@ public class M2_EnemyScript : MonoBehaviour
 
         }
 
-        if (checkCollisionLeft.collider != null && checkCollisionLeft.collider.CompareTag("Player") || checkCollisionRight.collider != null && checkCollisionRight.collider.CompareTag("Player"))
-        {
-            playerAttributes.playerHealth -= 20;
-
-            Debug.Log(playerAttributes.playerHealth);
-        }
-
         if (checkCollisionLeft.collider != null && checkCollisionLeft.collider.CompareTag("Ground"))
         {
             changeDirection = false;
@@ -68,6 +61,16 @@ public class M2_EnemyScript : MonoBehaviour
         {
             rb.velocity = new Vector2(enemySpeed, rb.velocity.y);
             sr.flipX = false;
+        }
+
+    }
+
+    private void OnTriggerEnter2D (Collider2D collision)
+    {
+
+        if (collision.transform.CompareTag("Player"))
+        {
+            playerAttributes.playerHealth -= 20;
         }
 
     }
