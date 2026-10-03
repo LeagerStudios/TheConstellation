@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class M1Manager : MonoBehaviour
 {
+    public M1UI UI;
     public bool alive;
     private int obtainedCoins; //en principio las monedas se consiguen siempre en orden en el M1, asiq no hace falta crear un bool para cada moneda por cada moneda independiente
     private bool k;
@@ -83,6 +84,7 @@ public class M1Manager : MonoBehaviour
     public void GameOver()
     {
         alive = false;
+        UI.Die();
     }
 
     public void Win()
