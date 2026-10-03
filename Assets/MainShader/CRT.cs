@@ -9,7 +9,7 @@ public class CRT : MonoBehaviour
         RenderTexture source,
         RenderTexture destination)
     {
-        if (material != null)
+        if (material != null && OptionsManager.ShaderOn)
             Graphics.Blit(source, destination, material);
         else
             Graphics.Blit(source, destination);

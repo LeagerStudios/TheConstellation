@@ -10,15 +10,7 @@ public class MenuController : MonoBehaviour
 {
     public void Start()//ejemplito del sistema de guardado, no tiene nada que ver con el menu xdxdxd
     {
-        if(DataSaver.CheckIfFileExists(Application.persistentDataPath + "/SaveData.fah"))
-        {
-            TestDataSave data = DataSaver.LoadData<TestDataSave>(Application.persistentDataPath + "/SaveData.fah");
-            Debug.Log(data.fah);
-        }
-        else
-        {
-            DataSaver.SaveData(new TestDataSave("FAAAAAAAAAAAAAAAAAAAAAAAAHHH!!!"), Application.persistentDataPath + "/SaveData.fah");
-        }
+
     }
 
     public void PlayButton()
@@ -36,6 +28,11 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
+    public void ToggleShader(bool shader)
+    {
+        OptionsManager.ShaderOn = shader;
+    }
+
     public void QuitButton()
     {
         Application.Quit();
@@ -45,15 +42,4 @@ public class MenuController : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
-}
-
-[Serializable]
-public class TestDataSave : SaveData
-{
-    public TestDataSave(string fah)
-    {
-        this.fah = fah;
-    }
-
-    public string fah;
 }
