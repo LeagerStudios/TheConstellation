@@ -1,0 +1,20 @@
+Font: SonyCam Original  Style: Regular
+Point Size: 53   SP/PD Ratio: 9,4%
+
+Characters included: 91/99
+Missing characters: 8
+Excluded characters: 0
+
+Characters missing from font file:
+----------------------------------------
+ID: 60	Hex: 3C	Char []
+ID: 62	Hex: 3E	Char [>]
+ID: 123	Hex: 7B	Char [{]
+ID: 125	Hex: 7D	Char [}]
+ID: 126	Hex: 7E	Char [~]
+ID: 160	Hex: A0	Char [ ]
+ID: 8203	Hex: 200B	Char [​]
+ID: 9633	Hex: 25A1	Char [□]
+
+Characters excluded from packing:
+----------------------------------------
